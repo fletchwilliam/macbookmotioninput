@@ -48,25 +48,24 @@ ROW │  ●─● │           │     │           │ ●─● │  ● �
     │  │  │  │        │     ║                       ║             │ │  │  │       │
     │  │  │  │      9 │ ○   ●   ○   ○   ○       ○   ●   ○   ○   ○ │ │  │  │       │
     │  │  │  │        │     ╠════════════════════════╝             │ │  │  │       │
-    │  │  │  │        │     ║         LM358N                      │ │  │  │       │
+    │  │  │  │        │     ║         LM358N (8-pin DIP, 4 rows)   │ │  │  │       │
     │  │  │  │     10 │ ○   ●  ┌──────────────┐  ●   ○   ○   ○   ○ │ │  │  │       │
     │  │  │  │        │     ║  │ 1 ●    ● 8   │  ║                 │ │  │  │       │
-    │  │  │  │     11 │ ○   ●──┤OUT1    VCC├──●   ○   ○   ○   ○ │ │  │  │       │
-    │  │●━│━━│━━━━━━━━│━━━━━━━━┤              ├━━━━━━━━━━━━━━━━━━━━│━│━━│━●│ ←─ VCC to pin 8
-    │  │  │  │     12 │ ○   ○  │ 2 ●    ● 7   │  ○   ○   ○   ○   ○ │ │  │  │       │
+    │  │●━│━━│━━━━━━━━│━━━━━●──┤OUT1    VCC├──●━━━━━━━━━━━━━━━━━━━│━│━━│━●│ ←─ VCC to pin 8
+    │  │  │  │     11 │ ○   ○  │ 2 ●    ● 7   │  ○   ○   ○   ○   ○ │ │  │  │       │
     │  │  │  │        │        │ -IN1    OUT2 │                    │ │  │  │       │
-    │  │  │  │     13 │ ○   ○  │ 3 ●    ● 6   │  ○   ○   ○   ○   ○ │ │  │  │       │
+    │  │  │  │     12 │ ○   ○  │ 3 ●    ● 6   │  ○   ○   ○   ○   ○ │ │  │  │       │
     │  │  │  │        │        │ +IN1    -IN2 │                    │ │  │  │       │
-    │  │  │  │     14 │ ○   ○  │ 4 ●    ● 5   │  ○   ○   ○   ○   ○ │ │  │  │       │
+    │  │  │  │     13 │ ○   ○  │ 4 ●    ● 5   │  ○   ○   ○   ○   ○ │ │  │  │       │
     │  │  │  │        │        │ GND     +IN2 │                    │ │  │  │       │
     │  │  │━━│━━━━━━━━│━━━━━━━━┤              ├━━━━━━━━━━━━━━━━━━━━│━│━━│━●│ ←─ GND to pin 4
-    │  │  │  │     15 │ ○   ○  └──────────────┘  ○   ○   ○   ○   ○ │ │  │  │       │
-    │  │  │  │        │                                           │ │  │  │       │
-    │  │  │  │     16 │ ○   ○   ○   ○   ○       ○   ●━━━●   ○   ○ │ │  │  │       │
+    │  │  │  │        │        └──────────────┘                    │ │  │  │       │
+    │  │  │  │     14 │ ○   ○   ○   ○   ○       ○   ○   ○   ○   ○ │ │  │  │       │
+    │  │  │  │     15 │ ○   ○   ○   ○   ○       ○   ●━━━●   ○   ○ │ │  │  │       │
     │  │  │  │        │                             ║R3 1M        │ │  │  │       │
-    │  │  │  │     17 │ ○   ○   ○   ○   ○       ○   ●   ●   ○   ○ │ │  │  │ ←─ R3 feedback
+    │  │  │  │     16 │ ○   ○   ○   ○   ○       ○   ●   ●   ○   ○ │ │  │  │ ←─ R3 feedback
     │  │  │  │        │                             ╚═══╝         │ │  │  │       │
-    │  │  │  │     18 │ ○   ○   ○   ○   ○       ○   ○   ○   ○   ○ │ │  │  │       │
+    │  │  │  │     17 │ ○   ○   ○   ○   ○       ○   ○   ○   ○   ○ │ │  │  │       │
     │  │  │  │        │                                           │ │  │  │       │
     │  │  │  │        │           BIAS VOLTAGE (2.5V)             │ │  │  │       │
     │  │●━│━━│━━━━━━━━│━●   ○   ○   ○   ○       ○   ○   ○   ○   ○ │ │  │  │       │
@@ -115,15 +114,18 @@ ROW │  ●─● │           │     │           │ ●─● │  ● �
                • C1 connects IF to LM358 input
                • R2 (100kΩ) to ground
 
-    Row 10-15: LM358N Op-Amp IC
-               • Straddles center gap (pins in columns d,e and f,g)
-               • Pin 1 (OUT1): Row 11, Col d
-               • Pin 2 (-IN1): Row 12, Col d  ← Feedback point
-               • Pin 3 (+IN1): Row 13, Col d  ← Bias input
-               • Pin 4 (GND):  Row 14, Col d
-               • Pin 8 (VCC):  Row 11, Col g
+    Row 10-13: LM358N Op-Amp IC (8-pin DIP spans 4 rows)
+               • Straddles center gap (pins in columns e and f)
+               • Pin 1 (OUT1): Row 10, Col e
+               • Pin 2 (-IN1): Row 11, Col e  ← Feedback point
+               • Pin 3 (+IN1): Row 12, Col e  ← Bias input
+               • Pin 4 (GND):  Row 13, Col e
+               • Pin 5 (+IN2): Row 13, Col f
+               • Pin 6 (-IN2): Row 12, Col f
+               • Pin 7 (OUT2): Row 11, Col f
+               • Pin 8 (VCC):  Row 10, Col f
 
-    Row 16-17: Feedback resistor R3 (1MΩ)
+    Row 15-16: Feedback resistor R3 (1MΩ)
                • Connects pin 1 to pin 2
 
     Row 19-22: Voltage divider for 2.5V bias
@@ -253,33 +255,34 @@ Arduino GND ────────►  Breadboard - (blue) rail
 
 ### Step 2: Place LM358N IC
 ```
-Insert LM358N at rows 10-14, straddling the center gap
-Pin 1 at row 11 column d, Pin 8 at row 11 column g
+Insert LM358N at rows 10-13, straddling the center gap
+Pin 1 at row 10 column e, Pin 8 at row 10 column f
+(8-pin DIP occupies exactly 4 rows)
 ```
 
 ### Step 3: Op-Amp Power
 ```
-Row 11g (Pin 8) ────────►  + rail (VCC)
-Row 14d (Pin 4) ────────►  - rail (GND)
+Row 10f (Pin 8) ────────►  + rail (VCC)
+Row 13e (Pin 4) ────────►  - rail (GND)
 ```
 
 ### Step 4: Bias Voltage Divider
 ```
 + rail  ──► R5 (10kΩ) ──► Junction ──► R6 (10kΩ) ──► - rail
                               │
-                              └──► LM358 Pin 3 (row 13d)
+                              └──► LM358 Pin 3 (row 12e)
 ```
 
 ### Step 5: Input Coupling
 ```
 HB100 IF ──► C1 (100nF) ──► R2 (100kΩ) to GND
                    │
-                   └──► LM358 Pin 2 (row 12d)
+                   └──► LM358 Pin 2 (row 11e)
 ```
 
 ### Step 6: Feedback
 ```
-LM358 Pin 1 (row 11d) ──► R3 (1MΩ) ──► LM358 Pin 2 (row 12d)
+LM358 Pin 1 (row 10e) ──► R3 (1MΩ) ──► LM358 Pin 2 (row 11e)
 ```
 
 ### Step 7: Output
