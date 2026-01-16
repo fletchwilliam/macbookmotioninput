@@ -1,0 +1,17 @@
+# Motion Controller Host Application Dependencies
+# Python 3.8+ required
+
+# Serial communication
+pyserial>=3.5
+
+# macOS system events
+pyobjc-core>=9.0
+pyobjc-framework-Cocoa>=9.0
+pyobjc-framework-Quartz>=9.0
+pyobjc-framework-ApplicationServices>=9.0
+
+# Menu bar application
+rumps>=0.4.0
+
+# Configuration management
+pyyaml>=6.0
