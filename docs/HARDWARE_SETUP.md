@@ -4,6 +4,8 @@
 
 This guide covers the hardware assembly for the Motion-Controlled MacBook Input Device.
 
+**See also:** [Visual Assembly Guide](HARDWARE_ASSEMBLY_VISUAL.md) for detailed breadboard diagrams using the Jaycar PB8820 (400 tie points).
+
 ---
 
 ## Components Required
