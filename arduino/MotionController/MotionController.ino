@@ -97,6 +97,11 @@ void loop() {
         // Analyze signal
         MotionAnalysis analysis = dsp.analyze(sampleBuffer, samplesCollected);
 
+        // Send debug data if debug mode is enabled
+        if (debugMode) {
+            serialComm.sendMotionData(analysis.frequency, analysis.amplitude, analysis.direction);
+        }
+
         // Update display based on motion
         if (analysis.motionDetected) {
             display.showMotionDetected(analysis.amplitude);
